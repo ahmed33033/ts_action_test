@@ -11,5 +11,6 @@
   ],
   "github.copilot.chat.pullRequestDescriptionGeneration.instructions": [
     { "text": "Always include a list of key changes." }
-  ]
+  ],
+  "js/ts.tsdk.path": "node_modules/typescript/lib"
 }

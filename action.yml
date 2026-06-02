@@ -1,23 +1,21 @@
-name: The name of your action here
-description: Provide a description here
-author: Your name or organization here
+name: Summarize Work Activity
+description: Summarize your activity on github and add it to your repo's ReadME
+author: Ahmed33033
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
 branding:
   icon: heart
   color: red
 
-# Define your inputs here.
 inputs:
-  milliseconds:
-    description: Your input description here
+  prompt:
     required: true
-    default: '1000'
+    description: the prompt for the AI model
 
 # Define your outputs here.
 outputs:
-  time:
-    description: Your output description here
+  response:
+    description: The AI Agent's response
 
 runs:
   using: node24

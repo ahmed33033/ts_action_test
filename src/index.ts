@@ -3,6 +3,7 @@
  * main logic.
  */
 import { run } from './main.js'
+import 'dotenv/config'
 
 /* istanbul ignore next */
 run()

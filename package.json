@@ -30,14 +30,18 @@
     "format:check": "npx prettier --check .",
     "lint": "npx eslint .",
     "local-action": "npx @github/local-action . src/main.ts .env",
-    "package": "npx rimraf ./dist && npx rollup --config rollup.config.ts --configPlugin @rollup/plugin-typescript",
+    "package": "pnpx rolldown -c",
     "package:watch": "npm run package -- --watch",
     "test": "NODE_OPTIONS=--experimental-vm-modules NODE_NO_WARNINGS=1 npx jest",
     "all": "npm run format:write && npm run lint && npm run test && npm run coverage && npm run package"
   },
   "license": "MIT",
   "dependencies": {
-    "@actions/core": "^3.0.0"
+    "@actions/core": "^3.0.1",
+    "@langchain/core": "^1.1.48",
+    "@langchain/openai": "^1.4.7",
+    "dotenv": "^17.4.2",
+    "langchain": "^1.4.2"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
@@ -49,7 +53,7 @@
     "@rollup/plugin-node-resolve": "^16.0.3",
     "@rollup/plugin-typescript": "^12.3.0",
     "@types/jest": "^30.0.0",
-    "@types/node": "^25.2.3",
+    "@types/node": "^25.9.1",
     "@typescript-eslint/eslint-plugin": "^8.56.0",
     "eslint": "^10.0.0",
     "eslint-config-prettier": "^10.1.8",
@@ -58,10 +62,11 @@
     "jest": "^30.2.0",
     "make-coverage-badge": "^1.2.0",
     "prettier": "^3.8.1",
+    "rolldown": "^1.0.3",
     "rollup": "^4.57.1",
     "ts-jest": "^29.4.6",
     "ts-jest-resolver": "^2.0.1",
-    "typescript": "^5.9.3"
+    "typescript": "^6.0.3"
   },
   "optionalDependencies": {
     "@rollup/rollup-linux-x64-gnu": "*"
