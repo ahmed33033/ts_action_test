@@ -41,7 +41,7 @@
     "@langchain/core": "^1.1.48",
     "@langchain/openai": "^1.4.7",
     "dotenv": "^17.4.2",
-    "langchain": "^1.4.2"
+    "langchain": "^1.4.4"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
