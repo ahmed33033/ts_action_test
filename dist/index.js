@@ -77,6 +77,9 @@ function issueCommand(command, properties, message) {
 	const cmd = new Command(command, properties, message);
 	process.stdout.write(cmd.toString() + os$2.EOL);
 }
+function issue(name, message = "") {
+	issueCommand(name, {}, message);
+}
 const CMD_STRING = "::";
 var Command = class {
 	constructor(command, properties, message) {
@@ -16208,6 +16211,14 @@ function setOutput(name, value) {
 	issueCommand("set-output", { name }, toCommandValue(value));
 }
 /**
+* Enables or disables the echoing of commands into stdout for the rest of the step.
+* Echoing is disabled by default if ACTIONS_STEP_DEBUG is not set.
+*
+*/
+function setCommandEcho(enabled) {
+	issue("echo", enabled ? "on" : "off");
+}
+/**
 * Sets the action status to failed.
 * When the action exits it will be with an exit code of 1
 * @param message add error issue message
@@ -16233,6 +16244,7 @@ function error(message, properties = {}) {
 */
 async function run() {
 	try {
+		setCommandEcho(true);
 		setOutput("response", "hiii");
 	} catch (error) {
 		if (error instanceof Error) setFailed(error.message);
