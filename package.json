@@ -38,10 +38,10 @@
   "license": "MIT",
   "dependencies": {
     "@actions/core": "^3.0.1",
-    "@langchain/core": "^1.1.48",
+    "@langchain/core": "^1.1.49",
     "@langchain/openai": "^1.4.7",
     "dotenv": "^17.4.2",
-    "langchain": "^1.4.2"
+    "langchain": "^1.4.5"
   },
   "devDependencies": {
     "@eslint/compat": "^2.0.2",
